@@ -9,6 +9,10 @@ main.c - Main source file for Synax Console
 #include <stdlib.h>
 #include <string.h>
 #include <dirent.h>
+#include <unistd.h>
+
+/* Local header declaration */
+#include "startup.h"
 
 /* Called for custom exceptions */
 void Error(int FatalErr, char* ErrMessage)
@@ -30,17 +34,9 @@ void Error(int FatalErr, char* ErrMessage)
 int main()
 {
     /* Startup message */
-    printf("Running Synax Console");
-    #ifdef _WIN32
-    printf(" on Windows");
-    #endif
-    #ifdef __APPLE__
-    printf(" on macOS");
-    #endif
-    #ifdef __linux__
-    printf(" on GNU/Linux");
-    #endif
-    printf("\n");
+    printf(SYN_StartupMessage);
 
-    ;
+    /* Variable declaration */
+    int LoggedIn;
+    char* Prompt;
 }
